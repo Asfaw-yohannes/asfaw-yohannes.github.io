@@ -730,6 +730,15 @@
 <footer>
   © 2026 Asfaw G. Yohannes · University of Calgary · Built with GitHub Pages
 </footer>
-
+<script>
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
 </body>
 </html>
