@@ -36,24 +36,33 @@
     /* ── Navigation ─────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
+      background: transparent;
+      border-bottom: 1px solid transparent;
       padding: 0 2rem;
       display: flex; align-items: center; justify-content: space-between;
       height: 56px;
+      transition: background 0.3s, border-color 0.3s;
     }
+    nav.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      }
     .nav-logo {
-      font-weight: 700; font-size: 1.1rem;
-      color: var(--navy); letter-spacing: -0.02em;
-    }
-    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.88rem; font-weight: 500;
-      color: var(--text-secondary); transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--teal); }
-
+  font-weight: 700; font-size: 1.1rem;
+  color: #fff; letter-spacing: -0.02em;
+  transition: color 0.3s;
+}
+  nav.scrolled .nav-logo { color: var(--navy); }
+  .nav-links a {
+  font-size: 0.88rem; font-weight: 500;
+  color: rgba(255,255,255,0.85); transition: color 0.2s;
+}
+  nav.scrolled .nav-links a { color: var(--text-secondary); }
+  .nav-links a:hover { color: #fff; }
+  nav.scrolled .nav-links a:hover { color: var(--teal); }
+    
+    
     /* ── Hero ───────────────────────────────────────────── */
     .hero {
       min-height: 100vh;
